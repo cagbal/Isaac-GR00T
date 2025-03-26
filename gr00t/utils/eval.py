@@ -42,6 +42,7 @@ def calc_mse_for_single_trajectory(
     steps=300,
     action_horizon=16,
     plot=False,
+    plot_path='result.png'
 ):
     state_joints_across_time = []
     gt_action_joints_across_time = []
@@ -117,6 +118,6 @@ def calc_mse_for_single_trajectory(
             ax.legend()
 
         plt.tight_layout()
-        plt.show()
+        plt.savefig(plot_path)
 
     return mse
